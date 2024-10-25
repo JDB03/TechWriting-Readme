@@ -8,9 +8,25 @@ ls lists out files and folders in the current directory
 
 ## Setting Up Ubuntu (Virtual Machine)
 
+1. Download the URC-2025.ova from the Google Drive [Link](https://drive.google.com/drive/u/0/folders/1vqS1py4Nn8kZ3vGHXefXxz-EPyCs_CXJ)
+
+2. Download VirtualBox [Download Page](https://www.virtualbox.org/wiki/Downloads)
+
+3. Open VirtualBox and select 'Import Appliance' from the File Dropdown in the top left corner
+
+4. Import the .ova file that you downloaded from the Google Drive
+
+5. Click Next and Tweak the Appliance Settings as you see fit (the defaults should work for most people)
+
+6. Wait while it imports
+
+7. Run the Virtual Machine by double clicking the new entry in the list off to the left, the password is the same as the username
+
+
 ## Setting Up Ubuntu (Dual Boot)
 
 ## Setting Up GitHub
+
 1. Open a new terminal and create and SSH Key by running the command `$ ssh-keygen`. Keep the default file name, and add a password if you want to.
 
 2. Go to [https://github.com/settings/keys](https://github.com/settings/keys) and select the 'New SSH Key' button.
@@ -19,9 +35,9 @@ ls lists out files and folders in the current directory
 
 4. Copy and paste the output of `$ cat ~/.ssh/id_rsa.pub` into the 'Key' field and select 'Add SSH key'
 
-5. Run the command `$ git config --global user.email "\<your email>" to set the email associated with your commits
+5. Run the command `$ git config --global user.email "\<your email>"` to set the email associated with your commits
 
-6. Run the command `$ git config --global user.name "\<your username>" to set the username associated with your commits
+6. Run the command `$ git config --global user.name "\<your username>"` to set the username associated with your commits
 
 ## Setting Up The URC Repo
 
