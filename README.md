@@ -61,7 +61,7 @@ ls lists out files and folders in the current directory
            /...
    ```
 
-## Making Your Own Package
+## Making Your Own ROS2 Package
 
 1. Go to (https://github.com/orgs/wvu-urc/repositories)[https://github.com/orgs/wvu-urc/repositories] and select the New Repository Button.
 
@@ -80,7 +80,33 @@ ls lists out files and folders in the current directory
    - `\<package_name>` is the name you gave your repository
    - `\<ssh_clone_code>` is the link copied from the code button on your repositories page (in the format of `git@github.com:wvu-urc/<package_name>.git`)
    - `\<branch>` is the specific branch of your repo you want included
+  
+5. In your code editor, open the `.gitignore` file in the main level of the workspace and add `src/<category>/<package_name>` to the list of ignored folders
+  
+6. Run the command `vcs import src < repos.yaml` to import all of the additional packages into the repo. Usually this will output text indicating the download of several packages, but two known failures can occur (See [Troubleshooting](#Troubleshooting) for more information)
+
+7. Navigate in a terminal to the category folder of new repo you just downloaded. It should be located at `~/workspace-newrobot/src/<category>
+
+8. Run the command `$ mv /<package_name> /<package_name>2 .` to rename the package folder temporarily
+   
+9. Run the command `$ ros2 pkg create --build-type ament_python <package_name>` to make the ROS2 package
+
+10. Run the command `$ cp -a /<package_name>2/. /<package_name>/; rm -rf /<package_name>2` to merge the files of the two folders together
+
+11. Run `$ cd ~/workspace-newrobot2025` to get back to the top level of the workspace. Once there, compile the workspace by running `$ colcon build`. See [Troubleshooting](#Troubleshooting) if you encounter errors or crashes. 
 
 ## Running Code
+
+1. Move to the top level of the workspace by running the command `cd ~/workspace-newrobot2025`
+
+2. Compile the workspace by running `$ colcon build`. See [Troubleshooting](#Troubleshooting) if you encounter errors or crashes.
+
+3. Allow files to be run by your terminal by running `$ source install/setup.bash`
+
+4. Run code in one of the following ways:
+   - `ros2 run <package_name> <node_name>`
+   - `ros2 launch <packate_name> <launch_file_name>`
+   - `ros2 launch launches/<launch_file_name>`
+   If you run into errors or crashes, See [Troubleshooting](#Troubleshooting).
 
 # Troubleshooting
