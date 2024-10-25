@@ -63,6 +63,24 @@ ls lists out files and folders in the current directory
 
 ## Making Your Own Package
 
+1. Go to (https://github.com/orgs/wvu-urc/repositories)[https://github.com/orgs/wvu-urc/repositories] and select the New Repository Button.
+
+2. Give this repository a descriptive name and leave it Private. Select Add a README file and choose MIT License from the dropdown menu. Then Create the repository
+
+3. Open `workspace-newrobot2025` in the code editor of your choice and open the `repos.yaml` file in the main level of the workspace.
+
+4. Add your new repo in with the following format:
+   ```
+   <category>/<package_name>:
+     type: git
+     url: <ssh_clone_code>
+     version: <branch>
+   ```
+   - `\<category>` is the general category your package falls into (i.e. autonomy, hardware_interfacing, user_interfacing)
+   - `\<package_name>` is the name you gave your repository
+   - `\<ssh_clone_code>` is the link copied from the code button on your repositories page (in the format of `git@github.com:wvu-urc/<package_name>.git`)
+   - `\<branch>` is the specific branch of your repo you want included
+
 ## Running Code
 
 # Troubleshooting
