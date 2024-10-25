@@ -1,9 +1,12 @@
 # Team Mountaineers Programming Setup Process
+This ReadMe Document is Specifically for the 2024-2025 Competition Year
 
 ## Important Notes
-$ means run in a terminal
-cd is change directory
-ls lists out files and folders in the current directory
+- `$` means to run this command in a terminal
+- `$ ls` will list out files and folders in the current directory
+- `$ cd` stands for change directory
+   - `$ cd /<directory>` will change to a specific directory at a lower level than this one (Like opening a folder in file explorer)
+   - `$ cd ..` will move you back up one level
 
 
 ## Setting Up Ubuntu (Virtual Machine)
@@ -23,7 +26,6 @@ ls lists out files and folders in the current directory
 7. Run the Virtual Machine by double clicking the new entry in the list off to the left, the password is the same as the username
 
 
-## Setting Up Ubuntu (Dual Boot)
 
 ## Setting Up GitHub
 
@@ -79,7 +81,7 @@ ls lists out files and folders in the current directory
 
 ## Making Your Own ROS2 Package
 
-1. Go to (https://github.com/orgs/wvu-urc/repositories)[https://github.com/orgs/wvu-urc/repositories] and select the New Repository Button.
+1. Go to [https://github.com/orgs/wvu-urc/repositories](https://github.com/orgs/wvu-urc/repositories) and select the New Repository Button.
 
 2. Give this repository a descriptive name and leave it Private. Select Add a README file and choose MIT License from the dropdown menu. Then Create the repository
 
@@ -115,14 +117,31 @@ ls lists out files and folders in the current directory
 
 1. Move to the top level of the workspace by running the command `cd ~/workspace-newrobot2025`
 
-2. Compile the workspace by running `$ colcon build`. See [Troubleshooting](#Troubleshooting) if you encounter errors or crashes.
+2. Make sure your code is up to date by running `vcs pull src`
 
-3. Allow files to be run by your terminal by running `$ source install/setup.bash`
+3. Compile the workspace by running `$ colcon build`. See [Troubleshooting](#Troubleshooting) if you encounter errors or crashes.
 
-4. Run code in one of the following ways:
+4. Allow files to be run by your terminal by running `$ source install/setup.bash`
+
+5. Run code in one of the following ways:
    - `ros2 run <package_name> <node_name>`
    - `ros2 launch <packate_name> <launch_file_name>`
    - `ros2 launch launches/<launch_file_name>`
    If you run into errors or crashes, See [Troubleshooting](#Troubleshooting).
 
 # Troubleshooting
+## VCS Tool isn't working
+- `Input data is not valid format: 'NoneType' object is not subscriptable`
+   - This error is cause by the repos.yaml file being empty. Check with one of the Programming coordinators to see if this should be the case
+- Most of the Imports are failing
+   - WVU has anti-spam protection set up in place and that causes issues when downloading our repositories at once. Try waiting a few minutes and running the command again. If that doesn't work, try using another internet source like a mobile hotspot.
+
+ ## Errors when Running `colcon build`
+- Most errors are related to specific packages so see if a particular one is mentioned
+   - If a python stack trace is shown the code in that package is messed up
+- `The current CMakeCache.txt <directory> is different than the directory <directory> where CMakeCache.txt was created. This may result in binaries being created in the wrong place.`
+   - Run `$ rm -rf ./log ./install ./build` to clear the workspace, then try building again
+- `The source directory <directory> does not exist`
+   - Run `$ rm -rf ./log ./install ./build` to clear the workspace, then try building again
+- My computer / VM keeps crashing when building the code
+   - `colcon build` uses a lot of computing resources and can sometimes starve out other important processes. If this keeps happening, try running `$ colcon build --executor sequential` instead. This will reduce the number of packages it tries to build at once from 4 to 1
