@@ -1,12 +1,27 @@
 # Team Mountaineers Programming Setup Process
 
+## Important Notes
+$ means run in a terminal
+cd is change directory
+ls lists out files and folders in the current directory
+
+
 ## Setting Up Ubuntu (Virtual Machine)
 
 ## Setting Up Ubuntu (Dual Boot)
 
 ## Setting Up GitHub
-1. 
+1. Open a new terminal and create and SSH Key by running the command `$ ssh-keygen`. Keep the default file name, and add a password if you want to.
 
+2. Go to [https://github.com/settings/keys](https://github.com/settings/keys) and select the 'New SSH Key' button.
+
+3. Title this key whatever you want but make sure the 'Key type' is 'Authentication Key'.
+
+4. Copy and paste the output of `$ cat ~/.ssh/id_rsa.pub` into the 'Key' field and select 'Add SSH key'
+
+5. Run the command `$ git config --global user.email "\<your email>" to set the email associated with your commits
+
+6. Run the command `$ git config --global user.name "\<your username>" to set the username associated with your commits
 
 ## Setting Up The URC Repo
 
