@@ -14,7 +14,7 @@
 
 3. Run the command `cd workspace-newrobot2025` to move the current terminal into the newly downloaded repo. The text printed automatically should look similar to `username@computer:~/workspace-newrobot2025$`.
 
-4. Run the command `vcs import src < repos.yaml` to import all of the additional packages into the repo. Usually this will output text indicating the download of several packages, but two known failures can occur (See [Troubleshooting](##Troubleshooting))
+4. Run the command `vcs import src < repos.yaml` to import all of the additional packages into the repo. Usually this will output text indicating the download of several packages, but two known failures can occur (See [Troubleshooting](#Troubleshooting))
 
 ### Make Sure you are in the home directory
 
@@ -30,4 +30,4 @@
 
 ## Running Code
 
-## Troubleshooting
+# Troubleshooting
