@@ -7,6 +7,7 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
 - `$ cd` stands for change directory
    - `$ cd /<directory>` will change to a specific directory at a lower level than this one (Like opening a folder in file explorer)
    - `$ cd ..` will move you back up one level
+- When Copying or Pasting in the Ubuntu Terminal, `Ctrl` + `C` and `Ctrl` + `V` do not work. You must use `Ctrl` + `Shift` + `C` and `Ctrl` + `Shift` + `V`
 
 
 ## Setting Up Ubuntu (Virtual Machine)
