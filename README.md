@@ -24,7 +24,7 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
 
 6. Wait while it imports
 
-7. Run the Virtual Machine by double clicking the new entry in the list off to the left, the password is the same as the username
+7. Run the Virtual Machine by double clicking the new entry in the list off to the left, the password is the same as the username (If you have trouble getting it functional, see [Troubleshooting](#VirtualBox)
 
 
 
@@ -131,6 +131,12 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
    If you run into errors or crashes, See [Troubleshooting](#Troubleshooting).
 
 # Troubleshooting
+
+## VirtualBox
+- If you get a black screen on startup try reimporting the OVA
+- If you aren't able to see anything on a computer with a 4K display, select view in the top menu bar and manually set your resolution to `1920 x 1080` or `1920 x 1200` and set the scale factor to `200%`
+- If you are using Windows and have WSL2 installed you may encounter a slow VM or one that doesn't run at all. To solve this problem, search `Turn Windows Features on or off` in the windows search bar and uncheck `Virtual Machine Platform`. This will disable WSL2 until you re-enable it, at which point your VirtualBox problems may start happening again.
+
 ## VCS Tool isn't working
 - `Input data is not valid format: 'NoneType' object is not subscriptable`
    - This error is cause by the repos.yaml file being empty. Check with one of the Programming coordinators to see if this should be the case
