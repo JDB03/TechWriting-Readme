@@ -70,7 +70,7 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
 
 9. After running the above commands, you should have a directory structure that follows something similar to this:
    ```
-    /workspace-newrobot
+    /workspace-newrobot2025
        /build
        /install
        /log
@@ -87,6 +87,7 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
          /...
            /...
    ```
+   This can be checked by opening the Ubuntu File explorer and checking to see the contents of the `workspace-newrobot2025` folder
 
 ## Making Your Own ROS2 Package
 
@@ -118,7 +119,7 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
    
 9. Run the command `$ ros2 pkg create --build-type ament_python <package_name>` to make the ROS2 package
 
-10. Run the command `$ cp -a /<package_name>2/. /<package_name>/; rm -rf /<package_name>2` to merge the files of the two folders together
+10. Run the command `$ cp -a /<package_name>2/. /<package_name>/; rm -rf /<package_name>2` to merge the files of the two folders together.  This command doesn't give any outputs but you can check it worked by running `$ ls`. This output should now contain `<package_name>` not `<package_name>2`
 
 11. Run `$ cd ~/workspace-newrobot2025` to get back to the top level of the workspace. Once there, compile the workspace by running `$ colcon build`. See [Troubleshooting](#Troubleshooting) if you encounter errors or crashes. 
 
