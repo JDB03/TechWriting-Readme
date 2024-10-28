@@ -9,12 +9,19 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
    - `$ cd ..` will move you back up one level
 - When Copying or Pasting in the Ubuntu Terminal, `Ctrl` + `C` and `Ctrl` + `V` do not work. You must use `Ctrl` + `Shift` + `C` and `Ctrl` + `Shift` + `V`
 
+## Using the Ubuntu Terminal
+- sudo password
+- ls
+- cd
+- copy and paste
+- directories
 
 ## Setting Up Ubuntu (Virtual Machine)
 
 1. Download the URC-2025.ova from the Google Drive [Link](https://drive.google.com/drive/u/0/folders/1vqS1py4Nn8kZ3vGHXefXxz-EPyCs_CXJ)
 
-2. Download VirtualBox [Download Page](https://www.virtualbox.org/wiki/Downloads)
+2. Download the VirtualBox host associated with the operating system you are currently using [Download Page](https://www.virtualbox.org/wiki/Downloads) 
+   - When installing, you may encounter a Python Binding Error, this is fine and you can ignore it.
 
 3. Open VirtualBox and select 'Import Appliance' from the File Dropdown in the top left corner
 
@@ -30,7 +37,7 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
 
 ## Setting Up GitHub
 
-1. Open a new terminal and create and SSH Key by running the command `$ ssh-keygen`. Keep the default file name, and add a password if you want to.
+1. Open a new terminal and create and SSH Key by running the command `$ ssh-keygen`. Keep the default file path by pressing enter, and add a password if you want to (not strictly necessary).
 
 2. Go to [https://github.com/settings/keys](https://github.com/settings/keys) and select the 'New SSH Key' button.
 
@@ -40,7 +47,7 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
 
 5. Run the command `$ git config --global user.email "\<your email>"` to set the email associated with your commits
 
-6. Run the command `$ git config --global user.name "\<your username>"` to set the username associated with your commits
+6. To set the username associated with your commits, run the command `$ git config --global user.name "\<your username>"`
 
 ## Setting Up The URC Repo
 
@@ -51,6 +58,7 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
 3. Run the command `$ cd workspace-newrobot2025` to move the current terminal into the newly downloaded repo. The text printed automatically should look similar to `username@computer:~/workspace-newrobot2025$`.
 
 4. Run the command `$ ./setup/install_humble.bash` to download ROS2 Humble and the other packages we use. This will take a while to install, 10-30 minutes in total depending on internet connection
+- There are certain points when you will be prompted with the option `(Y/n)` or `(y/n)`. In both cases, type `y` into the terminal and hit enter to accept
 
 5. Make sure you are still in the `$ workspace-newrobot2025` directory (`username@computer:~/workspace-newrobot2025$`). If you aren't, run the command `$ cd ~/workspace-newrobot2025`. After ensuring this, run the command `$ source ~/.bashrc` to reload environment variables and give the current terminal access to ROS2.
 
@@ -106,7 +114,7 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
 
 7. Navigate in a terminal to the category folder of new repo you just downloaded. It should be located at `~/workspace-newrobot/src/<category>
 
-8. Run the command `$ mv /<package_name> /<package_name>2 .` to rename the package folder temporarily
+8. Run the command `$ mv ./<package_name> ./<package_name>2 .` to rename the package folder temporarily. This command doesn't give any outputs but you can check it worked by running `$ ls`. This output should contain `<package_name>2` instead of `<package_name>`
    
 9. Run the command `$ ros2 pkg create --build-type ament_python <package_name>` to make the ROS2 package
 
