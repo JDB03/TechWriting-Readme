@@ -1,4 +1,4 @@
-# Team Mountaineers Programming Setup Process
+![image](https://github.com/user-attachments/assets/abeb69cd-fd83-4995-95dd-37435209c01f)# Team Mountaineers Programming Setup Process
 This ReadMe Document is Specifically for the 2024-2025 Competition Year
 
 ## Important Notes
@@ -33,7 +33,9 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
 
 7. Run the Virtual Machine by double clicking the new entry in the list off to the left, the password is the same as the username (If you have trouble getting it functional, see [Troubleshooting](#VirtualBox)
 
+## Using the Ubuntu Terminal
 
+1. 
 
 ## Setting Up GitHub
 
