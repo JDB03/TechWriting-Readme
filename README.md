@@ -86,7 +86,7 @@ The image below shows that the user `urc` running on the computer `URC` is at th
 
 6. Run the command `$ source ~/.bashrc` to reload environment variables and give the current terminal access to ROS2.
 
-7. Run the command `vcs import src < repos.yaml` to import all of the additional packages into the repo. Usually this will output text indicating the download of several packages, but two known failures can occur (See [Troubleshooting](#vcs-tool-isnt-working) for more information)
+7. Run the command `$ vcs import src < repos.yaml` to import all of the additional packages into the repo. Usually this will output text indicating the download of several packages, but two known failures can occur (See [Troubleshooting](#vcs-tool-isnt-working) for more information)
 
 8. Install Additional Dependencies by running the command `$ rosdep install --from-paths src --ignore-src -r -y`. This will install all the specific dependencies that are in packages you just downloaded.
 
@@ -138,19 +138,21 @@ The image below shows that the user `urc` running on the computer `URC` is at th
   
 5. In your code editor, open the `.gitignore` file in the main level of the workspace and add `src/<category>/<package_name>` to the list of ignored folders
   
-6. Run the command `vcs import src < repos.yaml` to import all of the additional packages into the repo. Usually this will output text indicating the download of several packages, but two known failures can occur (See [Troubleshooting](#vcs-tool-isnt-working) for more information)
+6. Make sure you are in the `~/workspace-newrobot2025` directory before continuing on to the next steps
 
-7. Navigate in a terminal to the category folder of new repo you just downloaded. It should be located at `~/workspace-newrobot/src/<category>
+7. Run the command `vcs import src < repos.yaml` to import all of the additional packages into the repo. Usually this will output text indicating the download of several packages, but two known failures can occur (See [Troubleshooting](#vcs-tool-isnt-working) for more information)
 
-8. Run the command `$ mv ./<package_name> ./<package_name>2 .` to rename the package folder temporarily. This command doesn't give any outputs but you can check it worked by running `$ ls`. This output should contain `<package_name>2` instead of `<package_name>`
+8. Navigate in a terminal to the category folder of new repo you just downloaded. It should be located at `~/workspace-newrobot2025/src/<category>`
+
+9. Run the command `$ mv ./<package_name> ./<package_name>2 .` to rename the package folder temporarily. This command doesn't give any outputs but you can check it worked by running `$ ls`. This output should contain `<package_name>2` instead of `<package_name>`
 ![image](https://github.com/user-attachments/assets/c47ff537-6846-4a4e-a863-5219303b2f0e)
 
-9. Run the command `$ ros2 pkg create --build-type ament_python <package_name>` to make the ROS2 package
+10. Run the command `$ ros2 pkg create --build-type ament_python <package_name>` to make the ROS2 package
 
-10. Run the command `$ cp -a /<package_name>2/. /<package_name>/; rm -rf /<package_name>2` to merge the files of the two folders together.  This command doesn't give any outputs but you can check it worked by running `$ ls`. This output should now contain `<package_name>` not `<package_name>2`
+11. Run the command `$ cp -a ./<package_name>2/. ./<package_name>/; rm -rf ./<package_name>2` to merge the files of the two folders together.  This command doesn't give any outputs but you can check it worked by running `$ ls`. This output should now contain `<package_name>` not `<package_name>2`
 ![image](https://github.com/user-attachments/assets/1bf8b6b1-ad9d-4e75-8652-fb1f4e85c7e9)
 
-11. Run `$ cd ~/workspace-newrobot2025` to get back to the top level of the workspace. Once there, compile the workspace by running `$ colcon build`. See [Troubleshooting](#errors-running-colcon-build) if you encounter errors or crashes. 
+12. Run `$ cd ~/workspace-newrobot2025` to get back to the top level of the workspace. Once there, compile the workspace by running `$ colcon build`. See [Troubleshooting](#errors-running-colcon-build) if you encounter errors or crashes. 
 
 ## Running Code
 
