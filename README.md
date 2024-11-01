@@ -3,6 +3,11 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
 
 ## Document Contents
 - [Setting Up Ubuntu \(Virtual Machine)](#Setting-Up-Ubuntu-Virtual-Machine)
+- [Using the Ubuntu Terminal](#using-the-ubuntu-terminal)
+- [Setting Up Github](#setting-up-github)
+- [Setting Up The URC Repo](#setting-up-the-urc-repo)
+- [Making Your Own ROS2 Package](#making-your-own-ros2-package)
+- [Running Code](#running-code)
 
 ## Setting Up Ubuntu (Virtual Machine)
 
@@ -151,6 +156,8 @@ The image below shows that the user `urc` running on the computer `URC` is at th
    - `ros2 launch <packate_name> <launch_file_name>`
    - `ros2 launch launches/<launch_file_name>`
    If you run into errors or crashes, See [Troubleshooting](#Troubleshooting).
+
+6. When you are finished running your script, you can keyboard interrupt to stop it using `ctrl` + `c`
 
 # Troubleshooting
 
