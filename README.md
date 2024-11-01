@@ -70,24 +70,28 @@ The image below shows that the user `urc` running on the computer `URC` is at th
 
 ## Setting Up The URC Repo
 
-1. Before setting up the URC Repo make sure you are in the correct place. To do this, open a new terminal and ensure that the text printed automatically looks similar to `username@computer:~$`. The current directory should be `~` and not anything else. If your terminal does not look like this, run the command `$ cd` without arguments to move back to your home directory.
+1. Open a new terminal by pressing the `+` icon in the top right of the terminal window and make sure you are in the `home` directory. (See [Using the Ubuntu Terminal](#using-the-ubuntu-terminal) for how to check and correct this)
 
-2. Run the command `$ git clone git@github.com:wvu-urc/workspace-newrobot2025.git workspace-newrobot2025`. This command will clone the current repo into a folder named `$ workspace-newrobot2025` in your home directory.
+2. Run the command `$ git clone git@github.com:wvu-urc/workspace-newrobot2025.git workspace-newrobot2025`. This command will clone the current repo into a folder named `$ workspace-newrobot2025` in your home directory. You can check this by running `$ ls` and making sure the output matches the image below.
+![Screenshot from 2024-11-01 10-54-09](https://github.com/user-attachments/assets/d5d1235d-b1cb-4caa-a6c1-cd0fe716ec6a)
 
-3. Run the command `$ cd workspace-newrobot2025` to move the current terminal into the newly downloaded repo. The text printed automatically should look similar to `username@computer:~/workspace-newrobot2025$`.
+3. Run the command `$ cd workspace-newrobot2025` to move the current terminal into the newly downloaded repo. Your terminal should now look similar to the one below.
+![Screenshot from 2024-11-01 10-56-21](https://github.com/user-attachments/assets/d7170a2e-fdbb-44b3-88c6-15da5897ae81)
 
 4. Run the command `$ ./setup/install_humble.bash` to download ROS2 Humble and the other packages we use. This will take a while to install, 10-30 minutes in total depending on internet connection
 - There are certain points when you will be prompted with the option `(Y/n)` or `(y/n)`. In both cases, type `y` into the terminal and hit enter to accept
 
-5. Make sure you are still in the `$ workspace-newrobot2025` directory (`username@computer:~/workspace-newrobot2025$`). If you aren't, run the command `$ cd ~/workspace-newrobot2025`. After ensuring this, run the command `$ source ~/.bashrc` to reload environment variables and give the current terminal access to ROS2.
+5. Make sure you are still in the `$ workspace-newrobot2025` directory (`username@computer:~/workspace-newrobot2025$`). If you aren't, run the command `$ cd ~/workspace-newrobot2025`.
 
-6. Run the command `vcs import src < repos.yaml` to import all of the additional packages into the repo. Usually this will output text indicating the download of several packages, but two known failures can occur (See [Troubleshooting](#Troubleshooting) for more information)
+6. Run the command `$ source ~/.bashrc` to reload environment variables and give the current terminal access to ROS2.
 
-7. Install Additional Dependencies by running the command `$ rosdep install --from-paths src --ignore-src -r -y`. This will install all the specific dependencies that are in packages you just downloaded.
+7. Run the command `vcs import src < repos.yaml` to import all of the additional packages into the repo. Usually this will output text indicating the download of several packages, but two known failures can occur (See [Troubleshooting](#vcs-tool-isnt-working) for more information)
 
-8. Compile the workspace by running `$ colcon build`. See [Troubleshooting](#Troubleshooting) if you encounter errors or crashes.
+8. Install Additional Dependencies by running the command `$ rosdep install --from-paths src --ignore-src -r -y`. This will install all the specific dependencies that are in packages you just downloaded.
 
-9. After running the above commands, you should have a directory structure that follows something similar to this:
+9. Compile the workspace by running `$ colcon build`. See [Troubleshooting](#errors-running-colcon-build) if you encounter errors or crashes.
+
+10. After running the above commands, you should have a directory structure that follows something similar to this:
    ```
     /workspace-newrobot2025
        /build
@@ -107,16 +111,19 @@ The image below shows that the user `urc` running on the computer `URC` is at th
            /...
    ```
    This can be checked by opening the Ubuntu File explorer and checking to see the contents of the `workspace-newrobot2025` folder
+![image](https://github.com/user-attachments/assets/0ff836e4-d147-4964-9167-0e7080ffaf76)
 
 ## Making Your Own ROS2 Package
 
 1. Go to [https://github.com/orgs/wvu-urc/repositories](https://github.com/orgs/wvu-urc/repositories) and select the New Repository Button.
+![Screenshot from 2024-11-01 10-58-55](https://github.com/user-attachments/assets/64284bf5-dcd7-49ae-bdcf-c8c7fe1b3467)
 
-2. Give this repository a descriptive name and leave it Private. Select Add a README file and choose MIT License from the dropdown menu. Then Create the repository
+2. Give this repository a descriptive name and leave it Private. Select Add a README file and choose MIT License from the dropdown menu. Then create the repository
+![Screenshot from 2024-11-01 11-01-08](https://github.com/user-attachments/assets/a78cddfd-68fa-467b-9c31-b90fb2c0bd21)
 
 3. Open `workspace-newrobot2025` in the code editor of your choice and open the `repos.yaml` file in the main level of the workspace.
 
-4. Add your new repo in with the following format:
+4. Add your new repo in with the following format (Follow the same Tabbing as the existing repo import lines:
    ```
    <category>/<package_name>:
      type: git
@@ -130,17 +137,19 @@ The image below shows that the user `urc` running on the computer `URC` is at th
   
 5. In your code editor, open the `.gitignore` file in the main level of the workspace and add `src/<category>/<package_name>` to the list of ignored folders
   
-6. Run the command `vcs import src < repos.yaml` to import all of the additional packages into the repo. Usually this will output text indicating the download of several packages, but two known failures can occur (See [Troubleshooting](#Troubleshooting) for more information)
+6. Run the command `vcs import src < repos.yaml` to import all of the additional packages into the repo. Usually this will output text indicating the download of several packages, but two known failures can occur (See [Troubleshooting](#vcs-tool-isnt-working) for more information)
 
 7. Navigate in a terminal to the category folder of new repo you just downloaded. It should be located at `~/workspace-newrobot/src/<category>
 
 8. Run the command `$ mv ./<package_name> ./<package_name>2 .` to rename the package folder temporarily. This command doesn't give any outputs but you can check it worked by running `$ ls`. This output should contain `<package_name>2` instead of `<package_name>`
-   
+![image](https://github.com/user-attachments/assets/c47ff537-6846-4a4e-a863-5219303b2f0e)
+
 9. Run the command `$ ros2 pkg create --build-type ament_python <package_name>` to make the ROS2 package
 
 10. Run the command `$ cp -a /<package_name>2/. /<package_name>/; rm -rf /<package_name>2` to merge the files of the two folders together.  This command doesn't give any outputs but you can check it worked by running `$ ls`. This output should now contain `<package_name>` not `<package_name>2`
+![image](https://github.com/user-attachments/assets/1bf8b6b1-ad9d-4e75-8652-fb1f4e85c7e9)
 
-11. Run `$ cd ~/workspace-newrobot2025` to get back to the top level of the workspace. Once there, compile the workspace by running `$ colcon build`. See [Troubleshooting](#Troubleshooting) if you encounter errors or crashes. 
+11. Run `$ cd ~/workspace-newrobot2025` to get back to the top level of the workspace. Once there, compile the workspace by running `$ colcon build`. See [Troubleshooting](#errors-running-colcon-build) if you encounter errors or crashes. 
 
 ## Running Code
 
@@ -148,7 +157,7 @@ The image below shows that the user `urc` running on the computer `URC` is at th
 
 2. Make sure your code is up to date by running `vcs pull src`
 
-3. Compile the workspace by running `$ colcon build`. See [Troubleshooting](#Troubleshooting) if you encounter errors or crashes.
+3. Compile the workspace by running `$ colcon build`. See [Troubleshooting](#errors-running-colcon-build) if you encounter errors or crashes.
 
 4. Allow files to be run by your terminal by running `$ source install/setup.bash`
 
