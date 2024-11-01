@@ -2,7 +2,7 @@
 This ReadMe Document is Specifically for the 2024-2025 Competition Year
 
 ## Document Contents
-- [Setting Up Ubuntu \(Virtual Machine)](#SettingUpUbuntu\(VirtualMachine\))
+- [Setting Up Ubuntu \(Virtual Machine)](#Setting-Up-Ubuntu-Virtual-Machine)
 
 ## Setting Up Ubuntu (Virtual Machine)
 
