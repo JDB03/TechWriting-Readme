@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/abeb69cd-fd83-4995-95dd-37435209c01f)# Team Mountaineers Programming Setup Process
+# Team Mountaineers Programming Setup Process
 This ReadMe Document is Specifically for the 2024-2025 Competition Year
 
 ## Important Notes
@@ -8,13 +8,6 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
    - `$ cd /<directory>` will change to a specific directory at a lower level than this one (Like opening a folder in file explorer)
    - `$ cd ..` will move you back up one level
 - When Copying or Pasting in the Ubuntu Terminal, `Ctrl` + `C` and `Ctrl` + `V` do not work. You must use `Ctrl` + `Shift` + `C` and `Ctrl` + `Shift` + `V`
-
-## Using the Ubuntu Terminal
-- sudo password
-- ls
-- cd
-- copy and paste
-- directories
 
 ## Setting Up Ubuntu (Virtual Machine)
 
@@ -35,17 +28,39 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
 
 ## Using the Ubuntu Terminal
 
-1. 
+1. To begin using the Terminal, select the `>_` icon from the desktop sidebar
+   ![Screenshot from 2024-11-01 09-53-52](https://github.com/user-attachments/assets/13b025c3-c947-423a-81b0-636f2ba93b9c)
+
+2. The terminal should now look like like the picture below. The pre-printed text, or prompt, always follows the same format: `username@computername~:directory$`.\
+The image below shows that the user `urc` running on the computer `urc` is at the `~` or `home` directory. The home directory can be thought of like the user folder from windows.
+  ![image](https://github.com/user-attachments/assets/d4c52689-11f5-4e57-9019-b94694105cb2)
+
+3. Important Commands to Know:
+   - `$ ls` this command will list out all files and folders found in the current directory
+   - `$ cd` this command will change your directory, there are several variations:
+     - `$ cd`        running this command without arguments will place your terminal back in the home directory
+     - `$ cd <folder>` running this command will move you into a given folder (`<folder>` found by running `$ ls`)
+     - `$ cd ..`     running this command will move you out of the current folder, back up one level
+   - `$ sudo <command>` this command (SuperUserDO) runs other commands with the highest permissions possible
+     - When running a `$ sudo` command, you may be prompted for a password, the password will be the one associated with your account
+    
+4. Other Notes:
+   - When copying and pasting from the terminal in Ubuntu 22.04, you must use `ctrl` + `shift` + `c` and `ctrl` + `shift` + `v`. If you forget the `shift` it will print strange characters on either side of the text
+
 
 ## Setting Up GitHub
 
 1. Open a new terminal and create and SSH Key by running the command `$ ssh-keygen`. Keep the default file path by pressing enter, and add a password if you want to (not strictly necessary).
 
-2. Go to [https://github.com/settings/keys](https://github.com/settings/keys) and select the 'New SSH Key' button.
+2. Go to [https://github.com/settings/keys](https://github.com/settings/keys) and select the 'New SSH Key' button shown below.
+  ![Screenshot from 2024-11-01 10-31-02](https://github.com/user-attachments/assets/e8fb9361-67a2-4bc7-aa29-fc7e298d42f3)
+
 
 3. Title this key whatever you want but make sure the 'Key type' is 'Authentication Key'.
 
-4. Copy and paste the output of `$ cat ~/.ssh/id_rsa.pub` into the 'Key' field and select 'Add SSH key'
+4. Run the command `$ cat ~/.ssh/id_rsa.pub` and Copy and paste its output into the 'Key' field and select 'Add SSH key'
+![Screenshot from 2024-11-01 10-37-16](https://github.com/user-attachments/assets/9a341ea9-6753-4618-8167-1569b7c01a39)
+
 
 5. Run the command `$ git config --global user.email "\<your email>"` to set the email associated with your commits
 
