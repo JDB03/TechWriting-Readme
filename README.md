@@ -8,6 +8,7 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
 - [Setting Up The URC Repo](#setting-up-the-urc-repo)
 - [Making Your Own ROS2 Package](#making-your-own-ros2-package)
 - [Running Code](#running-code)
+- [Troubleshooting](#troubleshooting)
 
 ## Setting Up Ubuntu (Virtual Machine)
 
