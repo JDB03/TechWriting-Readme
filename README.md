@@ -32,7 +32,7 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
    ![Screenshot from 2024-11-01 09-53-52](https://github.com/user-attachments/assets/13b025c3-c947-423a-81b0-636f2ba93b9c)
 
 2. The terminal should now look like like the picture below. The pre-printed text, or prompt, always follows the same format: `username@computername~:directory$`.\
-The image below shows that the user `urc` running on the computer `urc` is at the `~` or `home` directory. The home directory can be thought of like the user folder from windows.
+The image below shows that the user `urc` running on the computer `URC` is at the `~` or `home` directory. The home directory can be thought of like the user folder from windows.
   ![image](https://github.com/user-attachments/assets/d4c52689-11f5-4e57-9019-b94694105cb2)
 
 3. Important Commands to Know:
