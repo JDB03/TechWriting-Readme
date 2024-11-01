@@ -44,6 +44,7 @@ The image below shows that the user `urc` running on the computer `URC` is at th
      - `$ cd ..`     running this command will move you out of the current folder, back up one level
    - `$ sudo <command>` this command (SuperUserDO) runs other commands with the highest permissions possible
      - When running a `$ sudo` command, you may be prompted for a password, the password will be the one associated with your account
+     - Typing this password doesn't result in text showing for security reasons, but it is registering your keyboard inputs
     
 4. Other Notes:
    - When copying and pasting from the terminal in Ubuntu 22.04, you must use `ctrl` + `shift` + `c` and `ctrl` + `shift` + `v`. If you forget the `shift` it will print strange characters on either side of the text
