@@ -1,13 +1,8 @@
 # Team Mountaineers Programming Setup Process
 This ReadMe Document is Specifically for the 2024-2025 Competition Year
 
-## Important Notes
-- `$` means to run this command in a terminal
-- `$ ls` will list out files and folders in the current directory
-- `$ cd` stands for change directory
-   - `$ cd /<directory>` will change to a specific directory at a lower level than this one (Like opening a folder in file explorer)
-   - `$ cd ..` will move you back up one level
-- When Copying or Pasting in the Ubuntu Terminal, `Ctrl` + `C` and `Ctrl` + `V` do not work. You must use `Ctrl` + `Shift` + `C` and `Ctrl` + `Shift` + `V`
+## Document Contents
+- [Setting Up Ubuntu (Virtual Machine)](#Setting Up Ubuntu (Virtual Machine))
 
 ## Setting Up Ubuntu (Virtual Machine)
 
@@ -46,6 +41,7 @@ The image below shows that the user `urc` running on the computer `URC` is at th
     
 4. Other Notes:
    - When copying and pasting from the terminal in Ubuntu 22.04, you must use `ctrl` + `shift` + `c` and `ctrl` + `shift` + `v`. If you forget the `shift` it will print strange characters on either side of the text
+   - If you see `$` followed by a command of some kind, it means that this should be run in a terminal
 
 
 ## Setting Up GitHub
