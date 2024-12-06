@@ -29,14 +29,18 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
 
 ## Using the Ubuntu Terminal
 
-1. To begin using the Terminal, select the `>_` icon from the desktop sidebar
-   ![Screenshot from 2024-11-01 09-53-52](https://github.com/user-attachments/assets/13b025c3-c947-423a-81b0-636f2ba93b9c)
+- To begin using the Terminal, select the `>_` icon from the desktop sidebar
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/13b025c3-c947-423a-81b0-636f2ba93b9c" alt="Highlighted Terminal Icon" width="250"/>
+</p>
 
-2. The terminal should now look like like the picture below. The pre-printed text, or prompt, always follows the same format: `username@computername~:directory$`.\
-The image below shows that the user `urc` running on the computer `URC` is at the `~` or `home` directory. The home directory can be thought of like the user folder from windows.
-  ![image](https://github.com/user-attachments/assets/d4c52689-11f5-4e57-9019-b94694105cb2)
+   - The terminal should now look like like the picture below. The pre-printed text, or prompt, always follows the same format: `username@computername~:directory$`.\
+   The image below shows that the user `urc` running on the computer `URC` is at the `~` or `home` directory. The home directory can be thought of like the user folder from windows.
+<p align="center">
+   <img src="https://github.com/user-attachments/assets/d4c52689-11f5-4e57-9019-b94694105cb2" alt="Opened Terminal" width="400"/>
+</p>
 
-3. Important Commands to Know:
+- Important Commands to Know:
    - `$ ls` this command will list out all files and folders found in the current directory
    - `$ cd` this command will change your directory, there are several variations:
      - `$ cd`        running this command without arguments will place your terminal back in the home directory
@@ -46,7 +50,7 @@ The image below shows that the user `urc` running on the computer `URC` is at th
      - When running a `$ sudo` command, you may be prompted for a password, the password will be the one associated with your account
      - Typing this password doesn't result in text showing for security reasons, but it is registering your keyboard inputs
     
-4. Other Notes:
+- Other Notes:
    - When copying and pasting from the terminal in Ubuntu 22.04, you must use `ctrl` + `shift` + `c` and `ctrl` + `shift` + `v`. If you forget the `shift` it will print strange characters on either side of the text
    - If you see `$` followed by a command of some kind, it means that this should be run in a terminal
 
