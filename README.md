@@ -37,7 +37,7 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
    - The terminal should now look like like the picture below. The pre-printed text, or prompt, always follows the same format: `username@computername~:directory$`.\
    The image below shows that the user `urc` running on the computer `URC` is at the `~` or `home` directory. The home directory can be thought of like the user folder from windows.
 <p align="center">
-   <img src="https://github.com/user-attachments/assets/d4c52689-11f5-4e57-9019-b94694105cb2" alt="Opened Terminal" width="400"/>
+   <img src="https://github.com/user-attachments/assets/d4c52689-11f5-4e57-9019-b94694105cb2" alt="Opened Terminal" width="500"/>
 </p>
 
 - Important Commands to Know:
@@ -78,13 +78,17 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
 1. Open a new terminal by pressing the `+` icon in the top right of the terminal window and make sure you are in the `home` directory. (See [Using the Ubuntu Terminal](#using-the-ubuntu-terminal) for how to check and correct this)
 
 2. Run the command `$ git clone git@github.com:wvu-urc/workspace-newrobot2025.git workspace-newrobot2025`. This command will clone the current repo into a folder named `$ workspace-newrobot2025` in your home directory. You can check this by running `$ ls` and making sure the output matches the image below.
-![Screenshot from 2024-11-01 10-54-09](https://github.com/user-attachments/assets/d5d1235d-b1cb-4caa-a6c1-cd0fe716ec6a)
+<p align="center">
+   <img src="https://github.com/user-attachments/assets/d5d1235d-b1cb-4caa-a6c1-cd0fe716ec6a" alt="Terminal Clone Output" width="500"/>
+</p>
 
 3. Run the command `$ cd workspace-newrobot2025` to move the current terminal into the newly downloaded repo. Your terminal should now look similar to the one below.
-![Screenshot from 2024-11-01 10-56-21](https://github.com/user-attachments/assets/d7170a2e-fdbb-44b3-88c6-15da5897ae81)
+<p align="center">
+   <img src="https://github.com/user-attachments/assets/d7170a2e-fdbb-44b3-88c6-15da5897ae81" alt="Terminal cd Output" width="500"/>
+</p>
 
 4. Run the command `$ ./setup/install_humble.bash` to download ROS2 Humble and the other packages we use. This will take a while to install, 10-30 minutes in total depending on internet connection
-- There are certain points when you will be prompted with the option `(Y/n)` or `(y/n)`. In both cases, type `y` into the terminal and hit enter to accept
+   - There are certain points when you will be prompted with the option `(Y/n)` or `(y/n)`. In both cases, type `y` into the terminal and hit enter to accept
 
 5. Make sure you are still in the `$ workspace-newrobot2025` directory (`username@computer:~/workspace-newrobot2025$`). If you aren't, run the command `$ cd ~/workspace-newrobot2025`.
 
@@ -96,27 +100,29 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
 
 9. Compile the workspace by running `$ colcon build`. See [Troubleshooting](#errors-running-colcon-build) if you encounter errors or crashes.
 
-10. After running the above commands, you should have a directory structure that follows something similar to this:
-   ```
-    /workspace-newrobot2025
-       /build
-       /install
-       /log
-       /scripts
-       /setup
-       /src
-         /autonomy
-           /autonomy_2025
-         /infrastructural_packages
-           /robot_interfaces
-         /subfolder3
-           /additional_pkg1
-           /additional_pkg2
-         /...
-           /...
-   ```
-   This can be checked by opening the Ubuntu File explorer and checking to see the contents of the `workspace-newrobot2025` folder
-![image](https://github.com/user-attachments/assets/0ff836e4-d147-4964-9167-0e7080ffaf76)
+   - After running the above commands, you should have a directory structure that follows something similar to this:
+      ```
+       /workspace-newrobot2025
+          /build
+          /install
+          /log
+          /scripts
+          /setup
+          /src
+            /autonomy
+              /autonomy_2025
+            /infrastructural_packages
+              /robot_interfaces
+            /subfolder3
+              /additional_pkg1
+              /additional_pkg2
+            /...
+              /...
+      ```
+      This can be checked by opening the Ubuntu File explorer and checking to see the contents of the `workspace-newrobot2025` folder
+   <p align="center">
+      <img src="https://github.com/user-attachments/assets/0ff836e4-d147-4964-9167-0e7080ffaf76" alt="workspace-newrobot2025 folder" width="600"/>
+   </p>
 
 ## Making Your Own ROS2 Package
 
@@ -140,7 +146,7 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
    - `\<ssh_clone_code>` is the link copied from the code button on your repositories page (in the format of `git@github.com:wvu-urc/<package_name>.git`)
    - `\<branch>` is the specific branch of your repo you want included
   
-5. In your code editor, open the `.gitignore` file in the main level of the workspace and add `src/<category>/<package_name>` to the list of ignored folders
+5. Open the `.gitignore` file in the main level of the workspace using your code editor. Then add `src/<category>/<package_name>` to the list of ignored folders
   
 6. Make sure you are in the `~/workspace-newrobot2025` directory before continuing on to the next steps
 
@@ -149,14 +155,18 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
 8. Navigate in a terminal to the category folder of new repo you just downloaded. It should be located at `~/workspace-newrobot2025/src/<category>`
 
 9. Run the command `$ mv ./<package_name> ./<package_name>2 .` to rename the package folder temporarily. This command doesn't give any outputs but you can check it worked by running `$ ls`. This output should contain `<package_name>2` instead of `<package_name>`
-![image](https://github.com/user-attachments/assets/c47ff537-6846-4a4e-a863-5219303b2f0e)
+<p align="center">
+   <img src="https://github.com/user-attachments/assets/c47ff537-6846-4a4e-a863-5219303b2f0e" alt="Move Terminal Output" width="500"/>
+</p>
 
-10. Run the command `$ ros2 pkg create --build-type ament_python <package_name>` to make the ROS2 package
+11. Run the command `$ ros2 pkg create --build-type ament_python <package_name>` to make the ROS2 package
 
-11. Run the command `$ cp -a ./<package_name>2/. ./<package_name>/; rm -rf ./<package_name>2` to merge the files of the two folders together.  This command doesn't give any outputs but you can check it worked by running `$ ls`. This output should now contain `<package_name>` not `<package_name>2`
-![image](https://github.com/user-attachments/assets/1bf8b6b1-ad9d-4e75-8652-fb1f4e85c7e9)
+12. Run the command `$ cp -a ./<package_name>2/. ./<package_name>/; rm -rf ./<package_name>2` to merge the files of the two folders together.  This command doesn't give any outputs but you can check it worked by running `$ ls`. This output should now contain `<package_name>` not `<package_name>2`
+<p align="center">
+   <img src="https://github.com/user-attachments/assets/1bf8b6b1-ad9d-4e75-8652-fb1f4e85c7e9" alt="Copy and Remove Terminal Output" width="500"/>
+</p>
 
-12. Run `$ cd ~/workspace-newrobot2025` to get back to the top level of the workspace. Once there, compile the workspace by running `$ colcon build`. See [Troubleshooting](#errors-running-colcon-build) if you encounter errors or crashes. 
+14. Run `$ cd ~/workspace-newrobot2025` to get back to the top level of the workspace. Once there, compile the workspace by running `$ colcon build`. See [Troubleshooting](#errors-running-colcon-build) if you encounter errors or crashes. 
 
 ## Running Code
 
