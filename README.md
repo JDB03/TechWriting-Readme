@@ -69,9 +69,9 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
 ![Screenshot from 2024-11-01 10-37-16](https://github.com/user-attachments/assets/9a341ea9-6753-4618-8167-1569b7c01a39)
 
 
-5. Run the command `$ git config --global user.email "\<your email>"` to set the email associated with your commits
+5. Run the command `$ git config --global user.email "<your email>"` to set the email associated with your commits
 
-6. To set the username associated with your commits, run the command `$ git config --global user.name "\<your username>"`
+6. To set the  associated with your commits, run the command `$ git config --global user.name "<your username>"`
 
 ## Setting Up The URC Repo
 
