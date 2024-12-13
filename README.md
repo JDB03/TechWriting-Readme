@@ -184,7 +184,7 @@ This ReadMe Document is Specifically for the 2024-2025 Competition Year
    - `ros2 launch launches/<launch_file_name>`
    If you run into errors or crashes, See [Troubleshooting](#Troubleshooting).
 
-6. When you are finished running your script, you can keyboard interrupt to stop it using `ctrl` + `c`
+6. To stop your script, you can keyboard interrupt it by pressing `ctrl` + `c`
 
 # Troubleshooting
 
